@@ -1,5 +1,9 @@
 ## Tutorials
 
+### React
+
+### TypeScript
+
 ### Next.js
 
 ### Webpack and TypeScript
@@ -8,4 +12,4 @@
 
 ### MongoDB
 
-### MERN Fullstack
+### MERN
