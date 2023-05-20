@@ -4,7 +4,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import Banner from "../components/banner";
-//import Card from "../components/card";
+import Card from "../components/card";
+
+import coffeeStores from "../data/coffee-stores.json";
 
 //import useTrackLocation from "../hooks/use-track-location";
 
@@ -31,7 +33,27 @@ export default function Home(props: any):any {
           buttonText="View stores nearby"
           handleOnClick={handleOnBannerBtnClick}
         />
-        <Image className={styles.heroImage} src="/static/hero-image.png" alt="hero image" width={700} height ={400} />
+        <div className={styles.heroImage}> 
+            <Image  
+                src="/static/hero-image.png" 
+                alt="hero image" 
+                width={700} height={400} 
+            />
+        </div>
+        <div className={styles.cardLayout}>
+            {coffeeStores.map((coffeeStore: any) => {
+                return (
+                    <Card 
+                        key={coffeeStore.id} 
+                        name={coffeeStore.name} 
+                        imgUrl={coffeeStore.imgUrl} 
+                        href={`/coffee-store/${coffeeStore.id}`} 
+                        className={styles.card}
+                    />
+                );
+            })
+            }
+        </div>
         </main>
         </div>
     )

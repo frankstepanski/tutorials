@@ -62,5 +62,12 @@
 ### Pre-rendering
 
 - By default, Next.js pre-renders every page
+- Hydration is attaching JS to the HTML to make it interactive
 
 ![Pre-rendering](./images/pre-rendering.png)
+
+### Data Fetching
+
+- Static Generation (SSG) - `getStaticProps`: HTML is generated at build time and will be reused on each request
+- Incremental Site Regeneration (ISR) - `getStaticProps` with revalidate: HTML is generated at build time and will be reused on each request. After the HTML is generated, a background process will run to update the HTML and the cache.
+- Server-side rendering (SSR) - `getServerSideProps`: new HTML is generated on each request
